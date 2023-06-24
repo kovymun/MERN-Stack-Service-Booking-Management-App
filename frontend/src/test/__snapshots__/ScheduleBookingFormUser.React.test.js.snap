@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScheduleBookingFormUser component renders correctly 1`] = `
+<div
+  className="schedule-booking-form"
+>
+  <h5
+    className="schedule-booking-title"
+  >
+    Schedule Booking
+  </h5>
+  <form
+    className=""
+  >
+    <div
+      className="row"
+    >
+      <h6
+        className="customer"
+      >
+        Customer:
+      </h6>
+      <div
+        className="col-lg-12"
+      >
+        <input
+          className="mb-2 form-control"
+          name="customer"
+          placeholder="Enter Customer Name e.g. Calvin Harris"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <h6
+        className="contact-number"
+      >
+        Customer Contact Number:
+      </h6>
+      <div
+        className="col-lg-12"
+      >
+        <input
+          className="mb-2 form-control"
+          name="customerContactNumber"
+          placeholder="Enter Customer Contact No. e.g. 083XXXXXXX"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <h6
+        className="make"
+      >
+        Vehicle Make:
+      </h6>
+      <div
+        className="col-lg-12"
+      >
+        <input
+          className="mb-2 form-control"
+          name="vehicleMake"
+          placeholder="Enter Vehicle Make e.g. Ford Mustang"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <h6
+        className="model"
+      >
+        Vehicle Model:
+      </h6>
+      <div
+        className="col-lg-12"
+      >
+        <input
+          className="mb-2 form-control"
+          maxLength="4"
+          name="vehicleModel"
+          placeholder="Enter Vehicle Model e.g. 2009"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <h6
+        className="registration"
+      >
+        Vehicle Reg:
+      </h6>
+      <div
+        className="col-lg-12"
+      >
+        <input
+          className="mb-2 form-control"
+          maxLength="10"
+          name="vehicleReg"
+          placeholder="Enter Vehicle Registration e.g. GP12375"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <h6
+        className="date"
+      >
+        Date:
+      </h6>
+      <div
+        className="col-lg-12"
+      >
+        <input
+          className="mb-2 form-control"
+          name="date"
+          type="datetime-local"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <h6
+        className="service"
+      >
+        Service:
+      </h6>
+      <div
+        className="col-lg-12"
+      >
+        <select
+          className="form-select"
+        >
+          <option
+            value="Car: Battery Testing"
+          >
+            Car: Battery Testing
+          </option>
+          <option
+            value="Car: Full Details Vehicle Safety Assessment"
+          >
+            Car: Full Details Vehicle Safety Assessment
+          </option>
+          <option
+            value="Wheels: Wheel Balancing and Alignment"
+          >
+            Wheels: Wheel Balancing and Alignment
+          </option>
+          <option
+            value="Wheels: Tyre Puncture Assessment and Repairs"
+          >
+            Wheels: Tyre Puncture Assessment and Repairs
+          </option>
+          <option
+            value="Engine: Oil and Filter Replacement"
+          >
+            Engine: Oil and Filter Replacement
+          </option>
+        </select>
+      </div>
+    </div>
+    <button
+      className="mt-3 btn btn-light"
+      disabled={false}
+      type="submit"
+    >
+      SCHEDULE BOOKING
+    </button>
+  </form>
+</div>
+`;
