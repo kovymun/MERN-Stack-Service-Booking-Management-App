@@ -6,7 +6,8 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCar } from "@fortawesome/free-solid-svg-icons";
-import Button from "react-bootstrap/Button";
+// import { Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import HelpModalAdmin from "./HelpModalAdmin";
 import HelpModalNormal from "./HelpModalNormal";
 
@@ -49,7 +50,6 @@ export default function Header() {
             C
           </h2>
         </Link>
-        {/* <h2 className="brand-heading">Tyler's Auto Clinic</h2> */}
       </div>
 
       {/* Modal Container - Model Help instructions rendered accordingly depending on Admin or Normal User login */}
@@ -60,18 +60,6 @@ export default function Header() {
           <HelpModalNormal />
         ) : null}
       </div>
-
-      {/* {!user && (
-        <div className="sign-login-links">
-          <Link className="text-decoration-none text-white" to="/sign-up">
-            SIGN UP
-          </Link>
-          |
-          <Link className="text-decoration-none text-white" to="/login">
-            LOGIN
-          </Link>
-        </div>
-      )} */}
 
       {user && (
         <div className="logout-btn">

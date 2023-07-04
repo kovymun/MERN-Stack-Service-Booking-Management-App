@@ -32,6 +32,7 @@ export default function HomePageUser({
       </div>
     );
   });
+
   return (
     <div className="home-page-display">
       <Header />

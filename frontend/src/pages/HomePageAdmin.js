@@ -43,6 +43,7 @@ export default function HomePageAdmin({
         </div>
       ) : (
         <div className="home-withData-content">
+          <div className="search-bar-container">Search Bar Test Text</div>
           <div className="booking-display-container">
             <h5 className="booking-dashboard-heading">Bookings Dashboard:</h5>
             <RenderBookings bookings={bookings} deleteBooking={deleteBooking} />
