@@ -1,11 +1,12 @@
-/**TAC SERVICE BOOKING APP - MONGOOSE USER SCHEMA MODEL FILE**/
-/**KINDLY REFER TO THE END OF THIS DOCUMENT FOR ALL REFERENCES**/
+/** TAC SERVICE BOOKING APP - MONGOOSE USER SCHEMA MODEL FILE **/
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
 
 const userSchema = new mongoose.Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
   email: {
     type: String,
     required: true,
@@ -15,13 +16,17 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  role: String,
 });
 
-/* STATIC SIGN-UP METHOD */
-userSchema.statics.signup = async function (email, password, role) {
+/* STATIC ACCOUNT CREATION METHOD */
+userSchema.statics.createAcc = async function (
+  firstName,
+  lastName,
+  email,
+  password
+) {
   // validation
-  if (!email || !password || !role) {
+  if (!firstName || !lastName || !email || !password) {
     throw Error("All fields must be filled");
   }
 
@@ -29,7 +34,7 @@ userSchema.statics.signup = async function (email, password, role) {
     throw Error("Password Not Strong Enough");
   }
 
-  //checking whether the user email address already exists in the database
+  // checking whether the user email address already exists in the database
   const exists = await this.findOne({ email });
 
   if (exists) {
@@ -37,14 +42,18 @@ userSchema.statics.signup = async function (email, password, role) {
   }
 
   /*
-  bcrypt package allows us to use something called ""salt" when we are hashing the passwords. salt is a
-  random string of characters that gets added to the users password before it gets hashed - it adds an
-  extra layer of security to it.
+  * bcrypt package allows us to use "salt" during password hashing. "salt" is a random string of characters that gets added to the users password prior to hashing, 
+    thereby adding an extra layer of security.
   */
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ email, password: hash, role });
+  const user = await this.create({
+    firstName,
+    lastName,
+    email,
+    password: hash,
+  });
 
   return user;
 };
@@ -59,28 +68,16 @@ userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email });
 
   if (!user) {
-    throw Error("Invalid User Name");
+    throw Error("Invalid email address and/or password");
   }
 
   const match = await bcrypt.compare(password, user.password);
 
   if (!match) {
-    throw Error("Invalid Password");
+    throw Error("Invalid email address and/or password");
   }
 
   return user;
 };
 
 module.exports = mongoose.model("User", userSchema);
-
-/**REFERENCES**/
-/*
-bcrypt package:
-bcrypt is a hashing function that allows us to hash passwords. Hashing turns your password into a short string of letters and/or numbers using an encryption
-algorithm, adding extra security to your password.
-Referenced the NPM package manager website for the installation and usage information.
-https://www.npmjs.com/package/bcrypt
-
-Referenced a YouTube video for more information on how to apply Authentication with JWT to this MERN stack application.
-"MERN Authentication Tutorial." YouTube uploaded by The Net Ninja, 19 July 2022, <https://www.youtube.com/watch?v=WsRBmwNkv3Q&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT>
-*/

@@ -1,19 +1,19 @@
-/** TAC SERVICE BOOKING APP UPDATE BOOKING PAGE **/
+/** TAC SERVICE BOOKING APP SCHEDULE BOOKING PAGE **/
 
 import Navbar from "../components/navbar-components/Navbar";
-import UpdateBookingForm from "../components/booking-form-components/UpdateBookingForm";
+import ScheduleBookingForm from "../components/booking-form-components/ScheduleBookingForm";
 import Footer from "../components/footer-components/Footer";
 import HelpModal from "../components/modal-components/HelpModal";
 
-const UpdateBookingPage = () => {
+const ScheduleBookingPage = () => {
   return (
     <div className="app-page">
       <Navbar />
-      <UpdateBookingForm />
+      <ScheduleBookingForm />
       <HelpModal />
       <Footer />
     </div>
   );
 };
 
-export default UpdateBookingPage;
+export default ScheduleBookingPage;

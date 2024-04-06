@@ -1,35 +1,27 @@
-/** TAC SERVICE BOOKING APP - CUSTOM REACT HOOK FOR USER LOGIN **/
+/** TAC SERVICE BOOKING APP - CUSTOM REACT HOOK FOR CREATING USER ACCOUNT **/
 
-import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
-export const useLogin = () => {
-  const [loginError, setLoginError] = useState(null);
+export const useCreateAcc = () => {
   const { dispatch } = useAuthContext();
 
-  const login = async (loginCredentials) => {
-    const { rememberMe, ...loginCredentialsToSend } = loginCredentials;
-    setLoginError(null);
+  const createAcc = async (createAccCredentials) => {
+    const { rememberMe, ...createAccCredentialsToSend } = createAccCredentials;
 
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/create-acc", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(loginCredentialsToSend),
+        body: JSON.stringify(createAccCredentialsToSend),
       });
 
       const json = await response.json();
 
-      if (!response.ok) {
-        console.log(json.error);
-        setLoginError(json.error);
-      }
-
       if (response.ok) {
         if (rememberMe) {
-          // If "rememberMe" is checked - save the relevant user details to local storage when the user is logged into to their account.
+          // If "rememberMe" is checked - save the relevant user details to local storage when the user creates account successfully.
           localStorage.setItem("user", JSON.stringify(json));
         } else {
           // If "Remember Me" is not checked, remove the preference from localStorage
@@ -44,5 +36,5 @@ export const useLogin = () => {
     }
   };
 
-  return { login, loginError };
+  return { createAcc };
 };

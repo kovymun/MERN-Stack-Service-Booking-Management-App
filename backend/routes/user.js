@@ -1,16 +1,18 @@
-/**TAC SERVICE BOOKING APP EXPRESSJS BACKEND TASK USER ROUTES FILE**/
-
-/* The routes in this file reference the controller functions in the "userController.js" file to handle user sign-up and login requests. */
+/** TAC SERVICE BOOKING APP EXPRESSJS BACKEND TASK USER ROUTES FILE **/
+/*
+ * This file contains the Express.js backend routes for user login related tasks in the TAC Service Booking App.
+ * These routes handle all operations corresponding to controller functions defined in "userController.js", to manage user account creation and login requests.
+ */
 
 const router = require("express").Router();
 
-//Importing the user controller functions into the user routes file
-const { userLogin, userSignUp } = require("../controllers/userController");
+/* Importing the user controller functions into the user routes file */
+const { userLogin, userCreateAcc } = require("../controllers/userController");
 
-//POST request sign-up route to handle a user sign-up request
-router.post("/sign-up", userSignUp);
+/* POST request sign-up route to handle a user account creation request */
+router.post("/create-acc", userCreateAcc);
 
-//POST request login route to handle a user login request
+/* POST request login route to handle a user login request */
 router.post("/login", userLogin);
 
 module.exports = router;

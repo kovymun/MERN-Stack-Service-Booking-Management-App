@@ -1,21 +1,27 @@
-/**TAC SERVICE BOOKING APP - MONGOOSE BOOKING SCHEMA MODEL FILE**/
-/**KINDLY REFER TO THE END OF THIS DOCUMENT FOR ALL REFERENCES**/
+/** TAC SERVICE BOOKING APP - MONGOOSE BOOKING SCHEMA MODEL FILE **/
 /*
-* This file holds the "Mongoose schema model" for all MongoDB booking documents for this app.
-* A schema defines the structure of the document data within a particular database collection. This should structure the fields within the document & the data-type. 
-  We lay the structure of how we want our data to look like.
-* Mongoose is an ODM (Object-Document-Mapper) allowing a node.js/express.js app(which speaks in the language of Javascript Objects) to communicate with a 
-  MongoDB database (which speaks in a language of collections and documents).
+* This file defines the "Mongoose schema model" for managing all MongoDB booking documents in this application.
+* A schema defines the structure of the document data within a database collection. It dictates the fields within the document and their data types - essentially laying the structure of
+  how we want the data to look like.
+* Mongoose is an ODM (Object-Document-Mapper) enabling communication between a node.js/express.js application and a MongoDB database.
 */
 const mongoose = require("mongoose");
 
 const bookingSchema = new mongoose.Schema(
   {
-    customer: {
+    customerFirstName: {
+      type: String,
+      required: true,
+    },
+    customerLastName: {
       type: String,
       required: true,
     },
     customerContactNumber: {
+      type: String,
+      required: true,
+    },
+    customerEmail: {
       type: String,
       required: true,
     },
@@ -35,9 +41,12 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    service: {
+    serviceOption: {
       type: String,
       required: true,
+    },
+    addInfo: {
+      type: String,
     },
     userId: {
       type: String,
@@ -48,9 +57,8 @@ const bookingSchema = new mongoose.Schema(
 );
 
 /*
- * We then use the Schema to create a Mongoose Model.
- * In this example, 'Bookings' represents the NAME OF THE COLLECTION IN OUR DATABASE.
- * We going to change it to "Booking" --> Mongoose will very cleverly convert this string into a pluralize form to create the collection ("bookings").
+ * The Schema is then used to create a Mongoose Model.
+ * In this example, "Bookings" represents the COLLECTION NAME IN THE DATABASE.
+ * We going to change it to "Booking" --> Mongoose automatically converts this string into a pluralize form to create the "bookings" collection in the database.
  */
-
 module.exports = mongoose.model("Booking", bookingSchema);

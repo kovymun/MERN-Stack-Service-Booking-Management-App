@@ -1,4 +1,4 @@
-/**TAC SERVICE BOOKING APP EXPRESSJS BACKEND TEST FILE**/
+/** TAC SERVICE BOOKING APP EXPRESSJS BACKEND TEST FILE **/
 
 /*Importing the "chai" and "request" modules into the test file.*/
 const expect = require("chai").expect;
@@ -15,8 +15,8 @@ response status code of 401. An HTTP 401 unauthorized response status code indic
 authentication credentials for the requested resource.
 */
 
-describe("getBookings rest API get request endpoint/route", () => {
-  it("returns a response code of 401 for unauthorized access", (done) => {
+describe("Testing the 'getBookings' API endpoint/route in the backend", () => {
+  it("Should return a response code of 401 for unauthorized access", (done) => {
     const getBookingApiEndPoint = "http://localhost:8080/api/bookings";
     request(getBookingApiEndPoint, (error, response, body) => {
       expect(response.statusCode).to.equal(401);

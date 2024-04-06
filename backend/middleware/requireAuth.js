@@ -1,5 +1,4 @@
-/**TAC SERVICE BOOKING APP - AUTHENTICATION MIDDLEWARE FILE**/
-/**KINDLY REFER TO THE END OF THIS DOCUMENT FOR ALL REFERENCES**/
+/** TAC SERVICE BOOKING APP - AUTHENTICATION MIDDLEWARE FILE **/
 
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
@@ -31,9 +30,3 @@ const requireAuth = async (req, res, next) => {
 };
 
 module.exports = requireAuth;
-
-/**REFERENCES**/
-/*
-Referenced a YouTube video for more information on how to apply Authentication with JWT to this MERN stack application.
-"MERN Authentication Tutorial." YouTube uploaded by The Net Ninja, 19 July 2022, <https://www.youtube.com/watch?v=WsRBmwNkv3Q&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT>
-*/

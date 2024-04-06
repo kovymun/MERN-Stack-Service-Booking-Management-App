@@ -1,15 +1,15 @@
-/**TAC SERVICE BOOKING APP LANDING PAGE*/
+/** TAC SERVICE BOOKING APP LANDING PAGE **/
 
-import LandingLinks from "../components/landing-page-components/LandingLinks";
-import LandingLogo from "../components/landing-page-components/LandingLogo";
+import LandingBrand from "../components/landing-page-components/LandingBrand";
+import Login from "../components/auth-form-components/Login";
 
-export default function LandingPage() {
+const LandingPage = () => {
   return (
-    <div className="landing-page-container">
-      <div className="landing-page-contents">
-        <LandingLogo />
-        <LandingLinks />
-      </div>
-    </div>
+    <section className="landing-page">
+      <LandingBrand />
+      <Login />
+    </section>
   );
-}
+};
+
+export default LandingPage;

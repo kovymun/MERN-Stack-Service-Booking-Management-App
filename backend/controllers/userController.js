@@ -1,5 +1,4 @@
-/**TAC SERVICE BOOKING APP BACKEND USER CONTROLLER FILE**/
-/**KINDLY REFER TO THE END OF THIS DOCUMENT FOR ALL REFERENCES**/
+/** TAC SERVICE BOOKING APP BACKEND USER CONTROLLER FILE **/
 
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
@@ -12,17 +11,17 @@ const createToken = (_id) => {
   return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
 };
 
-/* USER SIGN-UP CONTROLLER FUNCTION */
-const userSignUp = async (req, res) => {
-  const { email, password, role } = req.body;
+/* CREATE USER ACCOUNT CONTROLLER FUNCTION */
+const userCreateAcc = async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
 
   try {
-    const user = await User.signup(email, password, role);
+    const user = await User.createAcc(firstName, lastName, email, password);
 
     // generating a json web token (jwt)
     const token = createToken(user._id);
 
-    res.status(200).json({ email, token, role });
+    res.status(200).json({ firstName, lastName, email, token });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -38,18 +37,15 @@ const userLogin = async (req, res) => {
     // generating a json web token (jwt)
     const token = createToken(user._id);
 
-    const role = user.role;
+    const { firstName, lastName } = user;
 
-    res.status(200).json({ email, token, role });
+    res.status(200).json({ firstName, lastName, email, token });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({
+      message: "login-error-response",
+      error: error.message,
+    });
   }
 };
 
-module.exports = { userSignUp, userLogin };
-
-/**REFERENCES**/
-/*
-Referenced a YouTube video for more information on how to apply Authentication with JWT to this MERN stack application.
-"MERN Authentication Tutorial." YouTube uploaded by The Net Ninja, 19 July 2022, <https://www.youtube.com/watch?v=WsRBmwNkv3Q&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT>
-*/
+module.exports = { userCreateAcc, userLogin };

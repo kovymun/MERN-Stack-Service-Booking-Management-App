@@ -1,282 +1,839 @@
-/**TAC SERVICE BOOKING APP: CSS FILE**/
+/** TAC SERVICE BOOKING APP: CSS FILE **/
+/* 
+* NOTE:
+* All icons used in the project are sourced from Font Awesome Icons https://fontawesome.com/icons
+* All fonts used in the project are sourced from Google Fonts https://fonts.google.com/
+*/
 
-/* This app is styled using both CSS, Bootstrap V5, and React-Bootstrap. */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
-/* Removing the default styling */
+/* Resetting the default styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
-/* STYLINGS FOR THE HEADER COMPONENT */
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.app-page {
+  height: 100dvh;
   width: 100%;
-  height: 12vh;
-  background-color: black;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+
+/* STYLINGS FOR THE PAGE TITLE */
+.title-container {
+  display: flex;
+  position: relative;
+  margin: 0 0 1em 0;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.title-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 4px solid #04033a;
+  bottom: 0;
+  left: 0;
+}
+
+/* STYLINGS FOR ALL LINK BUTTONS */
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  background-color: #04033a;
+  color: #fff;
+  padding: 0.5em 0.8em;
+  transition: background-color 0.3s ease;
+  margin: 0 0.5em 2em 0;
+}
+
+.link-btn:hover {
+  background-color: #3c46ff;
+  color: #fff;
+}
+
+/* Adding margin for the plus sign icon of the schedule booking link button */
+.link-btn > :nth-child(1) {
+  margin-right: 0.5em;
+}
+
+/* Styling for all input element placeholders defined in the application */
+::placeholder {
+  letter-spacing: 0.2em;
+  color: #767676;
+}
+
+/***********************************************************************************************************************************************************************************/
+/* STYLINGS FOR THE LANDING PAGE */
+
+.landing-page {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  overflow-y: hidden;
+}
+
+/* Styling for the Landing Page: Brand Section */
+.brand-section {
+  flex: 0 1 55%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 100dvh;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(
+      0deg,
+      rgba(4, 3, 58, 0.6),
+      rgba(4, 3, 58, 0.6)
+    ),
+    url(https://images.unsplash.com/photo-1568559598349-dbf322d50a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80);
+}
+
+.brand-container {
+  display: grid;
+  row-gap: 1.5em;
 }
 
 .brand-title {
-  width: 25%;
-  margin-left: 2em;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.logo-container {
+  outline: 2px solid #fff;
+  background-color: #fff;
+  color: #04033a;
+  margin-right: 1.5rem;
+  padding: 0.1em 0.2em;
+  border-radius: 0 10px;
+}
+
+.slogan {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Styling for Auth Login and Create Account Section */
+
+.login-section {
+  height: 100dvh;
+  flex: 0 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.login-container {
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+}
+
+.auth-logo-container {
+  text-align: center;
+}
+
+.auth-logo {
+  display: inline-block;
+  font-size: 2rem;
+  background-color: #04033a;
+  color: #fff;
+  padding: 0.2em 0.3em;
+  border-radius: 0 10px;
+  outline: 3px solid #04033a;
+}
+
+.auth-title {
+  color: #04033a;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1em 0;
+  font-weight: 600;
+}
+
+/* Styles for the Auth Login Input Container  */
+.auth-form-input-container {
+  display: grid;
+  row-gap: 1em;
+}
+
+.input-form-container {
+  display: grid;
+  row-gap: 0.1em;
+}
+
+.auth-form-input {
+  display: grid;
+  padding: 0.5em;
+}
+
+.show-pass-icon {
+  position: relative;
+}
+
+.show-pass-icon > .eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  color: #04033a;
+}
+
+/* Styling for Auth Options container  */
+.auth-options-container {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.auth-option-remember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-option-remember > label {
+  margin-left: 1em;
+}
+.auth-option-input {
+  color: #04033a;
+}
+
+.auth-btn {
+  width: 100%;
+  background-color: #04033a;
+  color: #fff;
+  border: none;
+  padding: 0.5em 0.8em;
+  margin-top: 1em;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #3c46ff;
+}
+
+.create-acc-link-container {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.5em;
+}
+
+.link-container {
+  margin: 0 0.4em;
+}
+
+.company-info-container {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.company-info-login-container {
+  margin-top: 5em;
+}
+
+.company-info-create-acc-container {
+  margin-top: 3em;
+}
+
+.disclaimer-container {
+  margin-top: 2em;
+}
+
+.create-acc-section {
+  overflow-y: scroll;
+  height: 100dvh;
+}
+
+.create-account-container {
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+  margin: 2em 0;
+}
+
+/***********************************************************************************************************************************************************************************/
+/* STYLING FOR ALL ERROR HANDLING MESSAGES */
+
+.error-message {
+  position: relative;
+  font-size: 0.75rem;
+  color: #ff0000;
+  text-align: left;
+  padding: 0 0 0 0.5em;
+}
+
+.auth-error-container {
+  position: relative;
+  height: 63px;
+}
+
+.auth-error-container > .eye-icon {
+  position: absolute;
+  top: 38%;
+  right: 4%;
+  transform: translateY(-50%);
+  color: #04033a;
+}
+
+/***********************************************************************************************************************************************************************************/
+/* STYLING FOR THE SCHEDULE BOOKING/UPDATE BOOKING PAGES */
+.navbar {
+  flex: 0 0 10%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar > :nth-child(1) {
+  text-decoration: none;
+}
+
+.nav-logo-container {
+  font-size: 1rem;
+  margin-left: 2.5em;
+  background-color: #fff;
+  color: #04033a;
+  padding: 0.2em 0.3em;
+  border-radius: 0 10px;
+  outline: 3px solid #fff;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2em;
+  font-size: 1rem;
+
+  color: #fff;
+}
+
+.avatar span {
+  margin-right: 1em;
 }
 
 .logout-btn {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  width: 30%;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-/***********************************************************************************************************************************************************/
-/* STYLINGS FOR THE LANDING PAGE */
-.landing-page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  color: white;
-}
-
-.landing-page-contents {
-  /* outline: 2px solid white; */
-  width: 65%;
-}
-
-.landing-links-contents {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.landing-logo-contents {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.landing-logo,
-.landing-title {
-  font-size: 5rem;
-}
-
-.landing-links-contents {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  /* outline: 2px solid white; */
-  margin-top: 2em;
-}
-
-/* Landing Page Login Links */
-
-.login-link {
-  width: 20%;
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  margin-right: 0.5em;
-  padding: 0.2em 0;
-  background-color: white;
-  border-radius: 0.8em;
-  color: black;
-  border: none;
+  background-color: #fff;
+  margin: 0;
+  padding: 0.3em 0.4em;
+  color: #04033a;
+  border: 1px solid #04033a;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
-  text-decoration: none;
 }
 
-.login-link:hover {
-  color: black;
+/* Changing button styling on hover */
+.logout-btn:hover {
+  border-color: #3c46ff;
+  color: #3c46ff;
 }
 
-/***********************************************************************************************************************************************************/
-/* STYLINGS FOR THE SIGN-UP AND LOGIN PAGES */
-.sign-login-container {
+/* Adding margin for the plus logout icon */
+.logout-btn > :nth-child(1) {
+  margin-right: 0.5em;
+}
+
+.booking-form-section {
+  height: 80%;
+  overflow-y: auto;
+  margin: 1em 0;
+  padding: 0 2em;
+}
+
+.form-container {
   width: 100%;
-  height: 88vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
-.sign-up-form,
-.login-form {
-  width: 35%;
-  background-color: black;
-  color: white;
-  padding: 2em;
-  border-radius: 1em;
-}
-
-.error {
-  background-color: white;
-  color: red;
-  border-radius: 0.3em;
-  margin-top: 1em;
-  padding: 0.5em;
-  text-align: center;
-  font-weight: 500;
-}
-
-/***********************************************************************************************************************************************************/
-/* STYLINGS FOR THE HOME PAGE */
-.home-withoutData-content {
-  width: 100%;
-  height: auto;
-  margin-top: 2em;
-}
-
-.no-data-message-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.booking-form-container {
   width: 60%;
-  float: left;
-  height: 74vh;
+}
+
+.booking-form-group-container {
+  display: grid;
+  row-gap: 0.3em;
+  margin: 1em 0;
+}
+
+.booking-form-group-container > h3,
+.work-order-num {
+  background-color: #04033a;
+  color: #fff;
+  padding: 0.5em 0 0.5em 0.3em;
+}
+
+.booking-form-group {
+  display: grid;
+  row-gap: 0.2em;
+}
+
+.booking-form-group > label {
+  font-size: 1.2rem;
+}
+
+.booking-form-group > input {
+  height: 50px;
+  padding: 0.5em;
+  letter-spacing: 0.2em;
+  color: #767676;
+  border: 1px solid #767676;
+}
+
+.booking-form-group > input:focus {
+  color: #04033a;
+}
+
+.booking-form-group > select {
+  height: 50px;
+  width: 100%;
+  padding: 0.5em;
+  color: #767676;
+  letter-spacing: 0.2em;
+  border-color: #767676;
+  appearance: none;
+}
+
+.service-drop-down-menu {
+  position: relative;
+}
+
+/* Styling for the drop-down arrow */
+.custom-drop-down-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.booking-form-group > textarea {
+  width: 100%;
+  letter-spacing: 0.2em;
+  padding: 0.5em;
+  color: #04033a;
+}
+
+.booking-form > button {
+  border: none;
+  width: 100%;
+  color: #fff;
+  background-color: #04033a;
+  padding: 0.8em 0;
+  transition: background-color 0.3s ease;
+}
+
+.booking-form > button:hover {
+  background-color: #3c46ff;
+}
+
+.footer {
+  flex: 0 0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.copyright-icon {
+  margin-right: 0.5em;
+}
+
+.nav-footer {
+  background-color: #04033a;
+  background-position: center;
+  background-size: cover;
+}
+
+/***********************************************************************************************************************************************************************************/
+/* STYLING FOR THE SERVICE BOOKING DASHBOARD PAGE */
+.dashboard-display-section {
+  overflow-y: auto;
+  height: 80%;
+  padding: 0 2em;
+  margin: 1em 0;
 }
 
 .no-data-message {
-  width: 70%;
-  height: auto;
-  position: relative;
-  height: auto;
-  font-size: 1.8rem;
-  padding: 1em;
-}
-
-.home-withData-content {
+  outline: 1px solid #767676;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
   width: 100%;
-  height: auto;
-  margin-top: 2em;
+  height: 60%;
+  padding: 0.5em 0;
 }
 
-/* Stylings for the Booking Display Container */
-.booking-display-container {
+.no-data-message > p {
+  color: #04033a;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.dashboard-search-bar-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+.dashboard-search-bar-container > input {
+  flex: 5;
+  padding: 0.5em;
+  letter-spacing: 0.2em;
+  color: #04033a;
+  border: 1px solid #767676;
+}
+
+.dashboard-search-bar-container > button {
+  flex: 1;
+  border: none;
+  background-color: #04033a;
+  color: #fff;
+  padding: 0.5em 0.8em;
+  margin-left: 0.5em;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-search-bar-container > button:hover {
+  background-color: #3c46ff;
+  color: #fff;
+}
+
+.dashboard-display-table {
+  overflow-x: auto;
+  border: 1px solid #04033a; /* Single line border around the whole table */
+  max-height: 40%;
+}
+
+.dashboard-display-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #04033a;
+}
+
+.dashboard-display-table th {
+  font-size: 1rem;
+}
+
+.dashboard-display-table th,
+.dashboard-display-table td {
+  padding: 0.7em;
+  text-align: left;
+  border: 1px solid #04033a;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.dashboard-display-table td.add-info-display {
+  white-space: normal;
+}
+
+.dashboard-display-table thead {
+  background-color: #04033a;
+  color: #fff;
+}
+
+/* Alternating row background color */
+.dashboard-display-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Text color for data content in the table body */
+.dashboard-display-table tbody td {
+  color: #767676;
+}
+
+.action-items > * {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.icon {
+  padding: 0.2em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.delete-icon {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.update-icon {
+  background-color: #ffbf00;
+  color: #000;
+}
+
+.complete-icon {
+  background-color: green;
+  color: #fff;
+}
+
+/***********************************************************************************************************************************************************************************/
+/* Styling for the Help-Modal Menu & the Cancel confirmation modal */
+
+.modal-section-visible {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.modal-section-hidden {
+  display: none;
+}
+
+.help-modal-container {
   width: 60%;
-  float: left;
-}
-
-.booking-dashboard-heading {
-  font-size: 1.5rem;
-  margin-left: 2em;
-  padding: 0 0.5em 0.3em 0.5em;
-}
-
-/* Stylings for the individual booking information display */
-.booking-display {
-  width: 70%;
-  height: auto;
-  outline: 2px solid black;
+  height: 70dvh;
   position: relative;
-  height: auto;
-  margin: 0 auto 1em auto;
-  padding: 1em 1em 0.2em 1em;
-}
-
-.schedule-booking-form-container {
-  width: 40%;
-  float: right;
-}
-
-.schedule-booking-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 85%;
-  outline: 2px solid black;
-  background-color: black;
-  border-radius: 1em;
-  color: white;
-  float: right;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #04033a;
   padding: 2em;
-  margin: 0 3em 2em 2em;
+  overflow-y: auto;
+  outline: 2px solid #04033a;
 }
 
-.update-booking-title,
-.schedule-booking-title {
-  font-size: 1.5rem;
-  margin-bottom: 1em;
-}
-
-/***********************************************************************************************************************************************************/
-/* STYLING FOR THE UPDATE BOOKING FORM/PAGE */
-.update-booking-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.cancel-confirmation-modal-container {
+  width: 60%;
   height: auto;
-}
-
-.update-booking-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  height: auto;
-  color: white;
-  background-color: black;
-  border-radius: 1em;
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #04033a;
   padding: 2em;
-  margin: 4em 0;
-  outline: 2px solid black;
+  overflow-y: auto;
+  outline: 2px solid #04033a;
 }
 
-/***********************************************************************************************************************************************************/
-/* RESPONSIVE MEDIA QUERIES */
-/* Responsive Landing Page */
-@media screen and (max-width: 400px) {
-  .landing-page-contents {
-    width: 65%;
+.close-icon {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  background-color: #04033a;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------------------------- MEDIA QUERIES --------------------------------------------------------------------------------*/
+@media (max-width: 350px) {
+  .footer {
+    font-size: 0.8rem;
   }
 
-  .landing-logo-contents {
+  .dashboard-search-bar-container > button {
+    margin: 0.5em 0 0 0;
+  }
+
+  .nav-link-container {
     display: flex;
-    flex-direction: column;
+    font-size: 0.9rem;
+  }
+
+  .help-modal-container .help-modal-title {
+    font-size: 5px;
+  }
+}
+
+@media (max-width: 450px) {
+  .login-section {
+    height: 100dvh;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .login-container {
+    width: 90%;
+  }
+
+  .auth-title {
+    font-size: 1.8rem;
+  }
+
+  .booking-form-section {
+    padding: 0 0.8em;
+  }
+
+  .booking-form-container {
+    width: 100%;
+  }
+
+  .dashboard-display-section {
+    padding: 0 0.8em;
+  }
+
+  .no-data-message {
+    font-size: 1.1rem;
+  }
+
+  .help-modal-container {
+    width: 90%;
+    height: 90dvh;
+    padding: 1em;
+    font-size: 0.8rem;
+  }
+
+  .help-modal-container .help-modal-title {
+    font-size: 1.2rem;
+  }
+
+  .help-modal-container ol {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
+  .help-modal-container ol li {
+    padding-bottom: 1em;
+  }
+
+  .cancel-confirmation-modal-container {
+    width: 90%;
+    padding: 1em;
+    font-size: 0.8rem;
+  }
+
+  .cancel-confirmation-button-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cancel-confirmation-button-container .link-btn {
+    flex: 0 0 100%;
+  }
+
+  .nav-logo-container {
+    margin-left: 1em;
+  }
+
+  .avatar {
+    margin-right: 0.7em;
+  }
+
+  .avatar span {
+    display: none;
+  }
+
+  .close-icon {
+    top: 2%;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 800px) {
+  .cancel-confirmation-modal-container {
+    width: 80%;
+    padding: 1em;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 768px) {
+  .booking-form-container {
+    width: 100%;
+  }
+
+  .login-container > * {
+    padding: 0 1em;
+  }
+
+  .help-modal-container {
+    width: 90%;
+    padding: 1em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .brand-title {
+    font-size: 2.2rem;
+  }
+
+  .slogan {
+    font-size: 1.2rem;
+  }
+
+  .login-container > * {
+    padding: 0 1em;
+  }
+}
+
+@media (max-width: 1000px) {
+  .brand-section > * {
+    display: none;
+  }
+
+  .brand-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+  }
+
+  .login-section {
+    position: fixed;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    flex-wrap: wrap;
+    height: 100dvh;
+    width: 100%;
+    z-index: 1;
   }
 
-  .landing-links-contents {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .login-container {
+    height: auto;
+    padding: 1em;
+    margin: 2em 0;
   }
 
-  .landing-logo,
-  .landing-title {
-    font-size: 2rem;
-  }
-
-  .login-link {
-    width: 60%;
+  .auth-logo {
     margin-top: 1em;
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-right: 0.5em;
-    padding: 0.1em 0;
-    background-color: white;
-    border-radius: 0.8em;
-    color: black;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .brand-title {
+    font-size: 2.4rem;
   }
 
-  .login-link:hover {
-    color: black;
+  .slogan {
+    font-size: 1.2rem;
   }
 }
