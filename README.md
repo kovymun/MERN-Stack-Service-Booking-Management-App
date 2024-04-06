@@ -71,6 +71,7 @@ Downloading the repository:
 
 <img width="634" alt="repo-download" src="https://github.com/kovymun/MERN-Stack-Service-Booking-Management-App/assets/78513588/f0fb04a3-b6e0-41e1-9e3d-af9bafc5412f">
 
+
 Once the repository has been downloaded, execute the following steps:
 
 - Open the **booking-manager** directory in VS code editor or editor of choice.
