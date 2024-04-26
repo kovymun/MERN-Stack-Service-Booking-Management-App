@@ -69,7 +69,12 @@ Downloading the repository:
 - From the _drop-down options_, select **Download Zip.**
 - This will download the repository to your local machine.
 
+<<<<<<< HEAD
 <img width="616" alt="repo-download-1" src="https://github.com/kovymun/fs-mern-auto-service-bookings/assets/78513588/e6dc3ea1-0ba1-4710-816c-4221de2b1816">
+=======
+<img width="634" alt="repo-download" src="https://github.com/kovymun/MERN-Stack-Service-Booking-Management-App/assets/78513588/f0fb04a3-b6e0-41e1-9e3d-af9bafc5412f">
+
+>>>>>>> 75a9f24c82d54d137c1c964c90814edd07fbea60
 
 Once the repository has been downloaded, execute the following steps:
 
