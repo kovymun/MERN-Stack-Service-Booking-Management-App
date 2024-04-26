@@ -69,6 +69,8 @@ Downloading the repository:
 - From the _drop-down options_, select **Download Zip.**
 - This will download the repository to your local machine.
 
+<img width="616" alt="repo-download-1" src="https://github.com/kovymun/fs-mern-auto-service-bookings/assets/78513588/e6dc3ea1-0ba1-4710-816c-4221de2b1816">
+
 Once the repository has been downloaded, execute the following steps:
 
 - Open the **booking-manager** directory in VS code editor or editor of choice.
