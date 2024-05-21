@@ -9,6 +9,7 @@
 - [Installation Guide](#installation-guide)
 - [Usage guide](#usage-guide)
 - [App Testing Measures](#app-testing-measures)
+- [App Deployment](#app-deployment)
 - [User Stories](#user-stories)
 - [Future Enhancements](#future-enhancements)
 - [Credits Section](#credits-section)
@@ -131,6 +132,7 @@ To schedule a new service booking in the application, follow these step-by-step 
 - **Additional Information**: If there are any _additional notes or special requirements_ related to the booking, include them in the _designated section_.
 - **Confirm Booking**: After filling out all the required information, _review your booking_ details to ensure accuracy. When you're satisfied with the information provided, click on the **CONFIRM BOOKING** button to confirm the booking.
 - **View Booking Confirmation**: Once the booking is successfully scheduled, you will receive a _confirmation message_, and the new service booking will be reflected on your _Booking Dashboard_.
+- **Update Service Status**: If applicable, update the _service status_ to reflect the _current progress_ as relayed by the maintenance team. (Refer to the Update Booking Section for detailed instructions on how to update a booking)
 
 ![schedule-booking](https://github.com/kovymun/MERN-booking-management-app/assets/78513588/d4faf435-555d-4914-9a40-e229868bf1a7)
 
@@ -141,16 +143,17 @@ To update an existing service booking, follow these step-by-step guidelines:
 - **Locate the Booking to Update**: Scroll through your _Booking Dashboard_ to find the specific booking you wish to _update_.
 - **Initiate Booking Update**: In the _tabular booking display_, navigate to the **action items column** for the booking you want to update. Click on the _Update_ icon associated with the booking you want to update. This action will redirect you to the _Update Booking Page_.
 - **Review Pre-Populated Details**: On the _Update Booking Page_, you'll find the existing booking details _pre-populated_ for your reference.
-- **Update Customer Information**: If needed, update the _customer's name, email address, and contact number_. Additionally, modify the _customer's vehicle make, model, and registration number_, as required
+- **Update Service Status**: Use the provided _drop-down menu_ to modify the _service status_ to reflect the _current progress_ as relayed by the maintenance team.
+- **Update Customer Information**: If needed, update the _service status, customer's name, email address, and contact number_. Additionally, modify the _customer's vehicle make, model, and registration number_, as required
 - **Update Service Details**: If the service type needs to be changed, use the provided drop-down menu to _select the appropriate service_.
 - **Update Service Date and Time**: Modify any changes to the _service appointment date and time_, ensuring it suits the customer's convenience.
 - **Additional Information**: If there are any _additional notes or special requirements_ related to the booking, include them in the _designated section_.
 - **Confirm Booking Update**: After making the necessary updates, _review the information_ to ensure accuracy. When you're satisfied with the information provided, click on the **UPDATE BOOKING** button to complete the booking update.
 - **View Updated Booking Confirmation**: Once the booking is successfully updated, you will receive a _confirmation message_, and the updated service booking will be reflected on your _Booking Dashboard_.
 
-![update-p1](https://github.com/kovymun/MERN-booking-management-app/assets/78513588/e09d3915-3168-41c6-87f2-cf8ff8b7dfa1)
+<img width="957" alt="update-t1" src="https://github.com/kovymun/fs-mern-auto-service-bookings/assets/78513588/9a4b80b1-6eeb-4d9c-a37a-2768502a5237">
 
-![update-p2](https://github.com/kovymun/MERN-booking-management-app/assets/78513588/28b8652c-5acd-47ba-a673-731500ae8a0e)
+<img width="959" alt="update-t2" src="https://github.com/kovymun/fs-mern-auto-service-bookings/assets/78513588/d741c288-ee3a-41cc-9dcc-5416847c929b">
 
 ### Cancelling a Booking:
 
@@ -179,9 +182,9 @@ To quickly find a specific service booking, follow these guidelines:
 - **Enter Search Criteria**: Type in _relevant information_ such as Work Order No. into the search bar. Alternatively, you can paste the _search query_ if you copied it from elsewhere.
 - **View Search Results**: As you _type or paste_, the app will _dynamically display_ matching results in real-time.
 
-![search-1](https://github.com/kovymun/MERN-booking-management-app/assets/78513588/bbf07e1b-5977-40c2-9105-4ab26913525e)
+<img width="959" alt="search-3" src="https://github.com/kovymun/fs-mern-auto-service-bookings/assets/78513588/616cdfb0-d1b9-4e45-ad5a-9ab891ba0309">
 
-![search-2](https://github.com/kovymun/MERN-booking-management-app/assets/78513588/9ce46fed-103b-483f-a48a-a0f7cdb3e1e9)
+<img width="958" alt="search-4" src="https://github.com/kovymun/fs-mern-auto-service-bookings/assets/78513588/d4e4fbb0-b180-4161-8ad0-1dc635ad7025">
 
 ## App Testing Measures:
 
@@ -203,6 +206,14 @@ In this project, _Back-end unit testing_ is performed using **Mocha** and **Chai
 - **mocha and chai** libraries have already been installed using the following command, _npm install --save-dev mocha chai_.
 - To execute your test, run **npm test** in your command line interface.
 - Review the _test results_.
+
+## App Deployment:
+
+The application is deployed and live. You can access it via this link https://tylers-auto-clinic.netlify.app
+
+I hope you enjoy interacting with the app as much as I have enjoyed building it.
+
+If you have any feedback, please feel free to reach out. Your input is invaluable in helping to improve the application.
 
 ## User Stories:
 

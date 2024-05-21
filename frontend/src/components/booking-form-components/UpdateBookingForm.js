@@ -12,6 +12,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { fetchBookings } from "../../redux/bookingsSlice";
 import { openHelpModal } from "../../redux/helpModalSlice";
 import services from "../sub-component-files/services";
+import statusFlags from "../sub-component-files/statusFlags";
 import { v4 as uuid4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -47,6 +48,7 @@ const UpdateBookingForm = () => {
 
       return {
         _id: json.booking._id,
+        status: json.booking.status,
         customerFirstName: json.booking.customerFirstName,
         customerLastName: json.booking.customerLastName,
         customerEmail: json.booking.customerEmail,
@@ -156,6 +158,27 @@ const UpdateBookingForm = () => {
                   })}
                 />
               </div>
+            </div>
+
+            {/* Booking status Drop-Down Field */}
+            <div className="booking-form-group status-drop-down-menu">
+              <label>Status:</label>
+              <select {...register("status")}>
+                <option value="" disabled>
+                  STATUS*
+                </option>
+                {statusFlags.map((flag) => (
+                  <option key={uuid4()} value={flag}>
+                    {flag}
+                  </option>
+                ))}
+              </select>
+
+              {/* Drop-Down Arrow Icon */}
+              <FontAwesomeIcon
+                className="status-custom-drop-down-arrow"
+                icon={faAngleDown}
+              />
             </div>
 
             {/* Updated Customer Information Details */}

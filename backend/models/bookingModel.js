@@ -48,6 +48,10 @@ const bookingSchema = new mongoose.Schema(
     addInfo: {
       type: String,
     },
+    status: {
+      type: String,
+      default: "SCHEDULED",
+    },
     userId: {
       type: String,
       required: true,

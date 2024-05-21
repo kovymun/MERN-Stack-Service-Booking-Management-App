@@ -2,6 +2,7 @@
 
 const columnDisplayHeadings = [
   "Work Order No.",
+  "Status",
   "Customer First Name",
   "Customer Last Name",
   "Customer Email Address",
@@ -11,7 +12,7 @@ const columnDisplayHeadings = [
   "Vehicle Registration",
   "Service Option",
   "Booking Date",
-  "Addition Information",
+  "Additional Information",
   "Booking Agent",
   "Action",
 ];

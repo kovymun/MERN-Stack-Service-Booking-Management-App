@@ -76,6 +76,10 @@ const ScheduleBookingForm = () => {
     newBooking.bookingDate = moment(newBooking.bookingDate).format(
       "dddd, MMMM D, YYYY HH:mmA"
     );
+
+    // Add status flag to the newBooking object
+    newBooking.status = "SCHEDULED";
+
     try {
       const response = await fetch("/api/bookings/schedule-booking", {
         method: "POST",
@@ -365,10 +369,3 @@ const ScheduleBookingForm = () => {
 };
 
 export default ScheduleBookingForm;
-
-// <div className="custom-drop-down-arrow-container">
-// <FontAwesomeIcon
-// className="custom-drop-down-arrow"
-// icon={faAngleDown}
-// />
-// </div>

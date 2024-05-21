@@ -85,6 +85,12 @@ const HelpModal = () => {
             successfully scheduled, you will receive a confirmation message, and
             the new service booking will be reflected on your Booking Dashboard.
           </li>
+          <li>
+            <strong>Update Service Status:</strong> If applicable, update the
+            service status to reflect the current progress as relayed by the
+            maintenance team. (Refer to the Update Booking Section for detailed
+            instructions on how to update a booking).
+          </li>
         </ol>
 
         {/*Help Menu guidelines on how to update/edit an existing service booking*/}
@@ -113,10 +119,15 @@ const HelpModal = () => {
             your reference.
           </li>
           <li>
+            <strong>Update Service Status:</strong> Use the provided drop-down
+            menu to modify the service status to reflect the current progress as
+            relayed by the maintenance team.
+          </li>
+          <li>
             <strong>Update Customer Information:</strong> If needed, update the
-            customer's name, email address, and contact number. Additionally,
-            modify the customer's vehicle make, model, and registration number,
-            as required
+            service status, customer's name, email address, and contact number.
+            Additionally, modify the customer's vehicle make, model, and
+            registration number, as required
           </li>
           <li>
             <strong>Update Service Details:</strong> If the service type needs

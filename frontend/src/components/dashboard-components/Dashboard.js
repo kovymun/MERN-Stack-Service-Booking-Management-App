@@ -45,6 +45,22 @@ const Dashboard = () => {
     dispatch(openDcModal(id));
   };
 
+  /* Function to generate status flag CSS class names based on the current status value */
+  const statusClass = (status) => {
+    switch (status) {
+      case "SCHEDULED":
+        return "scheduled";
+      case "IN-PROGRESS":
+        return "in-progress";
+      case "ON-HOLD":
+        return "pending";
+      case "WAITING FOR PARTS":
+        return "waiting";
+      default:
+        return "";
+    }
+  };
+
   /* useEffect hook to fetch service bookings from the server */
   useEffect(() => {
     if (user) {
@@ -201,6 +217,15 @@ const Dashboard = () => {
                     return (
                       <tr key={uuidv4()}>
                         <td>{booking._id}</td>
+                        <td>
+                          <span
+                            className={`status-flag status-${statusClass(
+                              booking.status
+                            )}`}
+                          >
+                            {booking.status}
+                          </span>
+                        </td>
                         <td>{booking.customerFirstName}</td>
                         <td>{booking.customerLastName}</td>
                         <td>{booking.customerEmail}</td>

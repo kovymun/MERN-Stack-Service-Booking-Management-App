@@ -395,11 +395,12 @@
 
 .booking-form-group {
   display: grid;
-  row-gap: 0.2em;
+  row-gap: 0.3em;
 }
 
 .booking-form-group > label {
   font-size: 1.2rem;
+  letter-spacing: 0.1em;
 }
 
 .booking-form-group > input {
@@ -424,7 +425,8 @@
   appearance: none;
 }
 
-.service-drop-down-menu {
+.service-drop-down-menu,
+.status-drop-down-menu {
   position: relative;
 }
 
@@ -432,6 +434,14 @@
 .custom-drop-down-arrow {
   position: absolute;
   top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.status-custom-drop-down-arrow {
+  position: absolute;
+  top: 70%;
   right: 10px;
   transform: translateY(-50%);
   pointer-events: none;
@@ -534,6 +544,7 @@
   overflow-x: auto;
   border: 1px solid #04033a; /* Single line border around the whole table */
   max-height: 40%;
+  margin-bottom: 0.5em;
 }
 
 .dashboard-display-table table {
@@ -597,6 +608,34 @@
 .complete-icon {
   background-color: green;
   color: #fff;
+}
+
+.status-flag {
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 0.3em 0.4em;
+  cursor: none;
+}
+
+/* status bg-color when service booking is scheduled */
+.status-scheduled {
+  background: #0b82d7;
+}
+
+/* status bg-color when service is in progress */
+.status-in-progress {
+  background-color: #35b635;
+}
+
+/* status bg-color if the service encounters a delay */
+.status-pending {
+  background: #f02222;
+}
+
+/* status bg-color if the service department is waiting for parts */
+.status-waiting {
+  background: #ff5f00;
 }
 
 /***********************************************************************************************************************************************************************************/
